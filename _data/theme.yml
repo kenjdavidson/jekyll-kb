@@ -1,0 +1,35 @@
+# Change disclaimer content - removing/clearing will stop the disclaimer
+# from being displayed.  Can be overwritten by adding disclaimer to 
+# page/post front matter
+disclaimer: |
+  The postings on this site are my own and don't necessarily represent my 
+  employer’s positions, strategies or opinions.
+
+# Control display and text on the Archive page
+archive:
+  title: Archive
+  description: |
+    Please browse through my published articles - comments and corrections are
+    always welcome.
+
+# Control display and text on the Categories page
+categories:
+  title: Categories
+  description: |
+    Please browse through my published articles - comments and corrections are
+    always welcome.    
+
+# Toggle link/icon to view atom feed (/atom.xml) in sidebar
+show_atom_feed: true
+
+# Google Analytics key, leave blank to ignore UA-xxxx-x
+google_analytics_key: 
+
+# Date format
+date_format: "%-d %b %Y"
+
+# Configure Disqus comments
+# Site name is configured on your Disqus settings screen.
+disqus:
+  site_name: 
+  title: 

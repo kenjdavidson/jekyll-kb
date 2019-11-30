@@ -1,0 +1,36 @@
+{% comment %}
+
+Provides standard meta data for search engines and open graph links.  Requries a number of customized theme
+variables: 
+
+
+
+{% endcomment %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="{{ site.data.theme.author.name }}">    
+
+<!-- Schema.org markup for Google+ -->
+<meta itemprop="name" content="{{ site.data.theme.title }}">
+<meta itemprop="description" content="{{ site.data.theme.description }}">
+<meta itemprop="image" content="{{ site.data.theme.icon }}">
+
+<!-- Twitter Card data 
+<meta name="twitter:card" content="product">
+<meta name="twitter:site" content="@publisher_handle">
+<meta name="twitter:title" content="{{ page.title }}">
+<meta name="twitter:description" content="{{ page.description }}">
+<meta name="twitter:creator" content="{{ site.data.social['twitter'].name }}">
+<meta name="twitter:image" content="http://www.example.com/image.jpg">
+<meta name="twitter:data1" content="$3">
+<meta name="twitter:label1" content="Price"> -->
+
+<!-- Open Graph data
+<meta property="og:title" content="{{ site.data.theme.title }}">
+<meta property="og:type" content="article">
+<meta property="og:url" content=" {{ page.url }}">
+<meta property="og:image" content="http://example.com/image.jpg">
+<meta property="og:description" content="{{ page.description }}">
+<meta property="og:site_name" content="{{ site.data.theme.title }}">
+<meta property="og:price:amount" content="15.00">
+<meta property="og:price:currency" content="USD"> -->

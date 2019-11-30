@@ -1,0 +1,10 @@
+- name: Github 
+  display: Github User
+  id: github_user
+  url: https://github.com/github_user
+  icon: fab fa-github
+- name: Instagram
+  display: Instagram User 
+  id: instagram_user
+  url: https://www.instagram.com/instagram_user
+  icon: fab fa-instagram
