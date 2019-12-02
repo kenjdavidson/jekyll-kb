@@ -31,3 +31,7 @@ The following are standard frameworks or libraries which are included by default
 
 **[Disqus](https://disqus.com/) (with configuration)**
 - Included in scripts but requires Jekyll theme configuration
+
+## Go
+
+Modify to your hearts desire.

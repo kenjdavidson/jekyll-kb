@@ -1,3 +1,9 @@
+# Author Information
+author:
+  name:
+  email:
+  address:
+
 # Change disclaimer content - removing/clearing will stop the disclaimer
 # from being displayed.  Can be overwritten by adding disclaimer to 
 # page/post front matter
