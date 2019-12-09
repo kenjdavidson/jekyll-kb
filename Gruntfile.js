@@ -9,6 +9,10 @@ module.exports = function(grunt) {
             { expand: true, cwd: 'node_modules/bootstrap/dist/js', src: 'bootstrap.bundle.min.*', dest: 'assets/js/bootstrap' },            
             { expand: true, cwd: 'node_modules/scrollmagic/scrollmagic/minified', src: '**', dest: 'assets/js/scrollmagic' },
             { expand: true, cwd: 'node_modules/bootstrap/scss', src: '**', dest: '_sass/bootstrap' },
+            { expand: true, cwd: 'node_modules/gsap/dist', src: 'gsap.*', dest: 'assets/js/scrollmagic' },
+            { expand: true, cwd: 'node_modules/@fortawesome/fontawesome-free/webfonts', src: '**', dest: 'assets/webfonts' },
+            { expand: true, cwd: 'node_modules/@fortawesome/fontawesome-free/scss', src: '**', dest: '_sass/fontawesome' },
+            { expand: true, cwd: 'node_modules/bootswatch/dist', src: '**/*.scss', dest: '_sass/bootswatch' }
           ]
         }
       }

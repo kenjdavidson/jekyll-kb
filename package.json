@@ -1,15 +1,14 @@
 {
-  "name": "jekyll-theme-bootstrap-starter",
+  "name": "jekyll-kb",
   "version": "1.0.0",
-  "description": "Bootstrap based Jekyll theme starter project",
-  "main": "index.js",
+  "description": "Jekyll Knowledge Base Theme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "grunt jekyll"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kenjdavidson/jekyll-theme-bootstrap-starter.git"
+    "url": "git+https://github.com/kenjdavidson/jekyll-kb.git"
   },
   "keywords": [
     "Jekyll",
@@ -19,16 +18,17 @@
   "author": "Ken Davidson <ken.j.davidson@live.ca>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kenjdavidson/jekyll-theme-bootstrap-starter/issues"
+    "url": "https://github.com/kenjdavidson/jekyll-kb/issues"
   },
-  "homepage": "https://github.com/kenjdavidson/jekyll-theme-bootstrap-starter#readme",
+  "homepage": "https://github.com/kenjdavidson/jekyll-kb#readme",
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2",
+    "bootstrap": "^4.4.1",
+    "bootswatch": "^4.4.1",
     "grunt": "^1.0.4",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-cssmin": "^3.0.0"
-  },
-  "dependencies": {
-    "bootstrap": "^4.4.1",
+    "grunt-contrib-cssmin": "^3.0.0",
+    "gsap": "^3.0.1",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.0",
     "scrollmagic": "^2.0.7"

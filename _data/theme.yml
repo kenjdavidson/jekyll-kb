@@ -1,8 +1,14 @@
 # Author Information
 author:
-  name:
-  email:
-  address:
+  name: Ken Davidson 
+  email: ken.j.davidson@live.ca
+  address: 
+
+# Configure Bootswatch theme
+# Leave this empty will use the bootstrap default theme
+bootswatch: 
+  theme: yeti
+  navbar: navbar-dark bg-primary 
 
 # Change disclaimer content - removing/clearing will stop the disclaimer
 # from being displayed.  Can be overwritten by adding disclaimer to 

@@ -1,0 +1,126 @@
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+nav.navbar {
+  height: 72px;
+  z-index: 1000;
+  @extend .shadow-sm;
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 36px;
+      border-radius: 50px;   
+      margin-right: 16px;   
+    }
+
+    span {      
+      font-weight: $navbar-title-weight;
+    }
+  }
+
+  i {
+    font-size: $navbar-title-size;    
+  }
+
+  .navbar-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &.left {
+      position: relative;
+      min-width: $navigation-width;          
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 20%; bottom: 20%; right: 0px;
+        width: 1px;
+        background-color: $navbar-dark-color;
+      }
+    }
+  }
+}
+
+main {
+  display: flex;
+  flex: 1;
+
+  .main-navigation {
+    flex-shrink: 0; 
+    background-color: gray("200");
+
+    .menu-wrapper {
+      min-width: 300px;   
+
+      ul {
+        list-style: none;
+        margin: 0px;
+        padding: $grid-gutter-width/2 0px;
+
+        li {
+          padding: 4px 0px 4px 16px;
+
+          &.heading {
+            text-transform: uppercase;
+            font-weight: bold;
+            color: gray("600");
+          }
+
+          &.item {
+            &.active {
+              background-color: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .main-content {
+    flex: 1;
+    padding: $grid-gutter-width/2 0px;
+  }
+}
+
+.main-navigation {
+  display: none;
+  position: absolute;
+}
+
+@include media-breakpoint-up(lg) {
+  .main-navigation {
+    display: block;
+    position: relative;
+
+    width: calc((100% - #{map-get($container-max-widths, "lg")}) / 2 + #{$navigation-width} + #{$grid-gutter-width/2});
+    padding-left: calc((100% - #{map-get($container-max-widths, "lg")}) / 2 + #{$grid-gutter-width/2});
+  }
+
+  .main-content {
+    padding-right: calc((100% - #{map-get($container-max-widths,"lg")}) / 2 + #{$grid-gutter-width/2});
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .main-navigation {
+    width: calc((100% - #{map-get($container-max-widths, "xl")}) / 2 + #{$navigation-width} + #{$grid-gutter-width/2});
+    padding-left: calc((100% - #{map-get($container-max-widths,"xl")}) / 2 + #{$grid-gutter-width/2});
+  }
+
+  .main-content {
+    padding-right: calc((100% - #{map-get($container-max-widths,"xl")}) / 2 + #{$grid-gutter-width/2});
+  }
+}

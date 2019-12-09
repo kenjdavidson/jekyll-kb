@@ -13,20 +13,22 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: 
-email: 
+title: Jekyll KB
+email: ken.j.davidson@live.ca
 description: |
+  Jekyll theme provides a documentation or knowledge base for your projects.  Using Bootstrap and
+  attempts to be as responsive as possible.
   
-baseurl: 
-url: 
-github_username: 
-git_address: 
-git_edit_address: 
+baseurl: /jekyll-kb
+github:
+  username: kenjdavidson
+  url: https://github.com/kenjdavidson/jekyll-kb
+  edit_url: https://github.com/kenjdavidson/jekyll-kb/blog/master
+search: false
 
 # Build settings
 markdown: kramdown
 highlighter: rouge
-remote_theme: 
 plugins:
   - jekyll-feed
   - jekyll-redirect-from
@@ -38,3 +40,11 @@ exclude: ['Gemfile','Gemfile.log','node_modules']
 
 # Timezone
 timezone: America/Toronto
+
+collections:
+  docs:
+    permalink: /docs/:path/
+    output: true
+  posts:
+    permalink: /blog/:year/:month/:day/:title/
+    output: true

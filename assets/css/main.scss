@@ -1,0 +1,23 @@
+---
+--- 
+
+@charset "utf-8";
+
+$navigation-width: 300px !default;
+$fa-font-path:        "../webfonts";
+
+$enable-shadows:              true;
+
+$navbar-title-size: 1.5em !default;
+$navbar-title-weight: bold !default;
+
+@import
+  {% if site.data.theme.bootswatch %}"bootswatch/{{ site.data.theme.bootswatch.theme | downcase }}/variables",{% endif %}
+  "bootstrap/bootstrap",
+  {% if site.data.theme.bootswatch %}"bootswatch/{{ site.data.theme.bootswatch.theme | downcase }}/bootswatch",{% endif %}
+  "fontawesome/fontawesome",
+  "fontawesome/brands",
+  "fontawesome/regular",
+  "fontawesome/solid",
+  "theme"
+;
