@@ -71,18 +71,29 @@ main {
         padding: $grid-gutter-width/2 0px;
 
         li {
-          padding: 4px 0px 4px 16px;
+          a {
+            display: block;
+            width: 100%;
+            padding: 4px 0px 4px 16px;
+            color: $body-color;
+
+            &:hover {
+              text-decoration: none;
+              color: $primary;
+              background-color: gray("300")
+            }
+          }
 
           &.heading {
+            padding: 4px 0px 4px 16px;
             text-transform: uppercase;
             font-weight: bold;
             color: gray("600");
           }
 
-          &.item {
-            &.active {
-              background-color: $white;
-            }
+          &.active a {
+            color: $primary;
+            background-color: $white;
           }
         }
       }
