@@ -1,0 +1,31 @@
+- title: Getting Started
+  links:
+  - doc: installation
+  - doc: configuration
+  - doc: jekyll
+- title: Filler Links
+  links:
+  - doc: installation
+  - doc: configuration
+  - doc: jekyll
+  - doc: installation
+  - doc: configuration
+  - doc: jekyll
+  - doc: installation
+  - doc: configuration
+  - doc: jekyll
+  - doc: installation
+  - doc: configuration
+  - doc: jekyll      
+- title: Libraries
+  links:
+  - title: Bootstrap
+    href: https://getbootstrap.com/
+  - title: Bootswatch
+    href: https://bootswatch.com/
+  - title: Font Awesome
+    href: https://fontawesome.com/
+  - title: ScrollMagic
+    href: http://scrollmagic.io/
+  - title: MMenu Light
+    href: https://mmenujs.com/

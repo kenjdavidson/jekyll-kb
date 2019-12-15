@@ -6,7 +6,11 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg {{ site.data.theme.bootswatch.navbar }}">
-        <div class="container">
+        <div class="container-fluid">
+            <button id="open-menu" class="navbar-toggler" type="button" 
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
             <div class="navbar-section left">
                 <a href="{{ '/' | relative_url }}" class="navbar-brand">
                     <img alt="{{ site.title }}" src="https://avatars1.githubusercontent.com/u/6210735?s=460&amp;v=4" />
@@ -22,7 +26,7 @@
     <main>
         {% include navigation.html %}
         <div class="main-content">
-            <div class="container">
+            <div class="container-fluid">
                 <h1>{{ page.title }}</h1>
                 {{ content }}
             </div>

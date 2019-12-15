@@ -1,3 +1,5 @@
+$content-max-width: 1280px !default;
+
 html,
 body {
   margin: 0px;
@@ -8,12 +10,32 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+
+  --mm-ocd-width: 300px;
+  --mm-ocd-max-width: 300px;
+}
+
+.container-fluid {
+  width: 100%;
+  max-width: $content-max-width;
 }
 
 nav.navbar {
   height: 72px;
   z-index: 1000;
   @extend .shadow-sm;
+
+  .navbar-toggler {
+    border-color: transparent !important;
+    border: 0px !important;
+
+    &:active,
+    &:hover,
+    &:focus {
+      border: 0px;
+      outline: none;
+    }
+  }
 
   .navbar-brand {
     display: flex;
@@ -30,7 +52,7 @@ nav.navbar {
     }
   }
 
-  i {
+  .nav-link i {
     font-size: $navbar-title-size;    
   }
 
@@ -41,14 +63,60 @@ nav.navbar {
 
     &.left {
       position: relative;
-      min-width: $navigation-width;          
+    }
+  }
+}
 
-      &:after {
-        content: "";
-        position: absolute;
-        top: 20%; bottom: 20%; right: 0px;
-        width: 1px;
-        background-color: $navbar-dark-color;
+#main-navigation {
+  flex-shrink: 0; 
+  background-color: gray("200");
+
+  .menu-wrapper {
+    min-width: 300px;   
+
+    ul {
+      list-style: none;
+      margin: 0px;
+      padding: $grid-gutter-width/2 0px 0px 0px;
+
+      li {
+        a {
+          display: block;
+          width: 100%;
+          padding: 4px 0px 4px 16px;
+          color: $body-color;
+
+          &:hover {
+            text-decoration: none;
+            color: $primary;
+            background-color: gray("300")
+          }
+        }
+
+        &.heading {
+          padding: 4px 0px 4px 16px;
+          text-transform: uppercase;
+          font-weight: bold;
+          color: gray("600");
+        }
+
+        &.active a {
+          color: $primary;
+          background-color: $white;
+        }
+      }
+
+      li.external {
+        a {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          i {
+            margin-right: $grid-gutter-width/2;
+            color: theme-color-level("dark", -5);
+          }
+        }
       }
     }
   }
@@ -58,80 +126,49 @@ main {
   display: flex;
   flex: 1;
 
-  .main-navigation {
-    flex-shrink: 0; 
-    background-color: gray("200");
-
-    .menu-wrapper {
-      min-width: 300px;   
-
-      ul {
-        list-style: none;
-        margin: 0px;
-        padding: $grid-gutter-width/2 0px;
-
-        li {
-          a {
-            display: block;
-            width: 100%;
-            padding: 4px 0px 4px 16px;
-            color: $body-color;
-
-            &:hover {
-              text-decoration: none;
-              color: $primary;
-              background-color: gray("300")
-            }
-          }
-
-          &.heading {
-            padding: 4px 0px 4px 16px;
-            text-transform: uppercase;
-            font-weight: bold;
-            color: gray("600");
-          }
-
-          &.active a {
-            color: $primary;
-            background-color: $white;
-          }
-        }
-      }
-    }
-  }
-
   .main-content {
     flex: 1;
     padding: $grid-gutter-width/2 0px;
   }
 }
 
-.main-navigation {
-  display: none;
-  position: absolute;
-}
-
 @include media-breakpoint-up(lg) {
-  .main-navigation {
-    display: block;
-    position: relative;
+  .navbar-section.left {
+    min-width: $navigation-width;          
 
-    width: calc((100% - #{map-get($container-max-widths, "lg")}) / 2 + #{$navigation-width} + #{$grid-gutter-width/2});
-    padding-left: calc((100% - #{map-get($container-max-widths, "lg")}) / 2 + #{$grid-gutter-width/2});
+    &:after {
+      content: "";
+      position: absolute;
+      top: 20%; bottom: 20%; right: 0px;
+      width: 1px;
+      background-color: $navbar-dark-color;
+    }
   }
 
-  .main-content {
-    padding-right: calc((100% - #{map-get($container-max-widths,"lg")}) / 2 + #{$grid-gutter-width/2});
+  nav#main-navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    min-width: calc(300px + #{$grid-gutter-width});
+    width: calc((100% - #{$content-max-width}) / 2 + #{$navigation-width} + #{$grid-gutter-width/2});    
+
+    .menu-wrapper {
+      width: $navigation-width;
+      min-width: $navigation-width;
+    }
+
+    nav.navbar {
+      display: none;
+    }
+  }
+
+  main .main-content {
+    padding-right: calc( 100% - #{$content-max-width} - #{$grid-gutter-width} * 2 );
+    padding-left: calc( #{$grid-gutter-width} * 2 );
   }
 }
 
 @include media-breakpoint-up(xl) {
-  .main-navigation {
-    width: calc((100% - #{map-get($container-max-widths, "xl")}) / 2 + #{$navigation-width} + #{$grid-gutter-width/2});
-    padding-left: calc((100% - #{map-get($container-max-widths,"xl")}) / 2 + #{$grid-gutter-width/2});
-  }
 
-  .main-content {
-    padding-right: calc((100% - #{map-get($container-max-widths,"xl")}) / 2 + #{$grid-gutter-width/2});
-  }
 }
