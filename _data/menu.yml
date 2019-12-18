@@ -1,23 +1,29 @@
 - title: Getting Started
   links:
-  - doc: installation
-  - doc: configuration
-  - doc: jekyll
+  - doc: _docs/installation.md
+  - doc: _docs/configuration.md
+  - doc: _docs/jekyll.md
 - title: Filler Links
   links:
-  - doc: installation
-  - doc: configuration
-  - doc: jekyll
-  - doc: installation
-  - doc: configuration
-  - doc: jekyll
-  - doc: installation
-  - doc: configuration
-  - doc: jekyll
-  - doc: installation
-  - doc: configuration
-  - doc: jekyll      
-- title: Libraries
+  - doc: _docs/installation.md
+  - doc: _docs/configuration.md
+  - doc: _docs/jekyll.md
+  - doc: _docs/installation.md
+  - doc: _docs/configuration.md
+  - doc: _docs/jekyll.md   
+- title: Hierarchy Menus
+  links:
+  - title: Group Example
+    links:
+    - doc: _docs/installation.md  
+    - doc: _docs/configuration.md
+    - doc: _docs/jekyll.md 
+  - title: Group Example 2
+    links:
+    - doc: _docs/installation.md  
+    - doc: _docs/configuration.md
+    - doc: _docs/jekyll.md     
+- title: External Links
   links:
   - title: Bootstrap
     href: https://getbootstrap.com/

@@ -5,7 +5,7 @@
     {% include links.html %}
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg {{ site.data.theme.bootswatch.navbar }}">
+    <nav id="primary-navbar" class="navbar navbar-expand-lg {{ site.data.theme.bootswatch.navbar }}">
         <div class="container-fluid">
             <button id="open-menu" class="navbar-toggler" type="button" 
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,10 +26,13 @@
     <main>
         {% include navigation.html %}
         <div class="main-content">
-            <div class="container-fluid">
-                <h1>{{ page.title }}</h1>
-                {{ content }}
-            </div>
+            <section class="articles">
+                <article>
+                    <h1>{{ page.title }}</h1>
+                    {{ content }}
+                </article>
+                {% include footer.html %}
+            </section>
         </div>
     </main>
 

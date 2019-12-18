@@ -1,38 +1,57 @@
 <nav id="main-navigation">
-    <nav class="navbar navbar-expand-lg {{ site.data.theme.bootswatch.navbar }}">
-        <button id="close-menu" class="navbar-toggler" type="button" 
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-arrow-left"></i>
-        </button>        
-    </nav>
-    <div class="menu-wrapper">
-        <ul>
-            <li class="item {% if '/' == page.url %}active{% endif %}">
-                <a href="{{ '/' | relative_url }}">What is {{ site.title }}</a>
-            </li>
-        </ul>
-        {% for section in site.data.menu %}
-        <ul>                  
-            <li class="heading">{{ section.title }}</li>                 
-            {% for item in section.links %}
-            {% if item.doc %}
-            {% assign item_url = item.doc | prepend:'/docs/' | append:'/' %}
-            {% assign p = site.docs | where:"url", item_url | first %}
-            <li class="item {% if item_url == page.url %}active{% endif %}">
-                <a href="{{ p.url | relative_url }}">
-                    <span>{{ p.title }}</span>                    
-                </a>
-            </li> 
-            {% elsif item.href %}
-            <li class="item external">
-                <a href="{{ item.href }}" alt="{{ item.title }}" target="_blank">
-                    <span>{{ item.title }}</span>
-                    <i class="fas fa-external-link-alt"></i>
-                </a>            
-            </li>             
-            {% endif %}
-            {% endfor %}                        
-        </ul>
-        {% endfor %}
+    <div id="main-navigation-wrapper">
+        <nav id="navigation-navbar" class="navbar navbar-expand-lg {{ site.data.theme.bootswatch.navbar }}">
+            <button id="close-menu" class="navbar-toggler" type="button" 
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-arrow-left"></i>
+            </button>        
+        </nav>
+        <div class="menu-wrapper">
+            <ul>
+                <li class="item {% if '/' == page.url %}active{% endif %}">
+                    <a href="{{ '/' | relative_url }}">What is {{ site.title }}</a>
+                </li>
+            </ul>
+            {% for section in site.data.menu %}
+            <ul>                  
+                <li class="heading">{{ section.title }}</li>                 
+                {% for item in section.links %}
+                {% if item.doc %}
+                {% assign p = site.docs | where:"path", item.doc | first %}
+                <li class="item {% if p.path == page.path %}active{% endif %}">
+                    <a href="{{ p.url | relative_url }}" alt="{{ p.title }}">
+                        <span>{{ p.title }}</span>                    
+                    </a>
+                </li> 
+                {% elsif item.links %}                
+                <li class="item menu">
+                    {% assign toggleId = item.title | downcase | replace: ' ', '-' %}
+                    <a alt="{{ item.title }}" data-toggle="collapse" href="#{{ toggleId }}" aria-expanded="false" aria-controls="{{ toggleId }}">
+                        <span>{{ item.title }}</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                    <ul id="{{ toggleId }}" class="collapse">
+                        {% for link in item.links %}
+                        {% assign p1 = site.docs | where:"path", link.doc | first %}
+                        <li class="item {% if p1.path == page.path %}active{% endif %}">
+                            <a href="{{ p1.url | relative_url }}" alt="{{ p1.title }}">
+                                <span>{{ p1.title }}</span>                    
+                            </a>
+                        </li>
+                        {% endfor %}                
+                    </ul>
+                </li> 
+                {% elsif item.href %}
+                <li class="item external">
+                    <a href="{{ item.href }}" alt="{{ item.title }}" target="_blank">
+                        <span>{{ item.title }}</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>            
+                </li>             
+                {% endif %}
+                {% endfor %}                        
+            </ul>
+            {% endfor %}
+        </div>
     </div>
 </nav>

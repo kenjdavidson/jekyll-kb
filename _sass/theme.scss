@@ -20,9 +20,20 @@ body {
   max-width: $content-max-width;
 }
 
+h1 {
+  padding-bottom: $grid-gutter-width/2;
+  margin-bottom: $grid-gutter-width;
+}
+
+h2 {
+  padding-bottom: $grid-gutter-width/2;
+}
+
 nav.navbar {
   height: 72px;
   z-index: 1000;
+  position: fixed;
+  width: 100%;
   @extend .shadow-sm;
 
   .navbar-toggler {
@@ -67,64 +78,10 @@ nav.navbar {
   }
 }
 
-#main-navigation {
-  flex-shrink: 0; 
-  background-color: gray("200");
-
-  .menu-wrapper {
-    min-width: 300px;   
-
-    ul {
-      list-style: none;
-      margin: 0px;
-      padding: $grid-gutter-width/2 0px 0px 0px;
-
-      li {
-        a {
-          display: block;
-          width: 100%;
-          padding: 4px 0px 4px 16px;
-          color: $body-color;
-
-          &:hover {
-            text-decoration: none;
-            color: $primary;
-            background-color: gray("300")
-          }
-        }
-
-        &.heading {
-          padding: 4px 0px 4px 16px;
-          text-transform: uppercase;
-          font-weight: bold;
-          color: gray("600");
-        }
-
-        &.active a {
-          color: $primary;
-          background-color: $white;
-        }
-      }
-
-      li.external {
-        a {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-
-          i {
-            margin-right: $grid-gutter-width/2;
-            color: theme-color-level("dark", -5);
-          }
-        }
-      }
-    }
-  }
-}
-
 main {
   display: flex;
   flex: 1;
+  margin-top: 72px;
 
   .main-content {
     flex: 1;
@@ -132,7 +89,18 @@ main {
   }
 }
 
+footer {
+  min-height: 200px;
+  border-top: 1px solid gray("300");
+  margin-top: $grid-gutter-width;
+  padding-top: $grid-gutter-width;
+}
+
 @include media-breakpoint-up(lg) {
+  nav.navbar {
+    position: initial;
+  }
+
   .navbar-section.left {
     min-width: $navigation-width;          
 
@@ -145,30 +113,39 @@ main {
     }
   }
 
-  nav#main-navigation {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+  main {
+    margin-top: 0px;
 
-    min-width: calc(300px + #{$grid-gutter-width});
-    width: calc((100% - #{$content-max-width}) / 2 + #{$navigation-width} + #{$grid-gutter-width/2});    
+    .main-content {
+      padding-right: calc( 100% - #{$content-max-width} - #{$grid-gutter-width} * 2 );      
 
-    .menu-wrapper {
-      width: $navigation-width;
-      min-width: $navigation-width;
+      .articles {
+        padding-left: calc( #{$grid-gutter-width} * 1.5 );
+        padding-right: calc( #{$grid-gutter-width} * 1.5 );
+      }
+
+      .article-index {
+        display: none;
+      }
     }
-
-    nav.navbar {
-      display: none;
-    }
-  }
-
-  main .main-content {
-    padding-right: calc( 100% - #{$content-max-width} - #{$grid-gutter-width} * 2 );
-    padding-left: calc( #{$grid-gutter-width} * 2 );
   }
 }
 
 @include media-breakpoint-up(xl) {
+  main {
 
+    .main-content {
+
+      .articles {
+        padding-left: calc( #{$grid-gutter-width} * 2 );
+        padding-right: calc( #{$grid-gutter-width} * 2 );
+      }
+
+      .article-index {
+        border-left: 1px solid gray("300");
+      }
+    }
+  }
 }
+
+@import "navigation";
