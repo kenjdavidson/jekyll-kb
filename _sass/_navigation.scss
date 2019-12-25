@@ -78,6 +78,7 @@
     align-items: flex-end;
 
     min-width: calc(300px + #{$grid-gutter-width});
+    width: calc((100% - #{$content-max-width}) / 2 + #{$navigation-width} + #{$grid-gutter-width/2});
 
     .menu-wrapper {
       padding-top: 0px;
@@ -92,5 +93,5 @@
 }
 
 @include media-breakpoint-up(xl) {
-  
+
 }

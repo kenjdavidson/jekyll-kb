@@ -1,4 +1,4 @@
-$content-max-width: 1280px !default;
+$content-max-width: 1200px !default;
 
 html,
 body {
@@ -93,6 +93,10 @@ footer {
 }
 
 @include media-breakpoint-up(lg) {
+  .container-fluid {
+    width: 100%;
+  }
+
   nav.navbar {
     position: initial;
   }
@@ -125,11 +129,16 @@ footer {
 }
 
 @include media-breakpoint-up(xl) {
-  main {
+  .container-fluid {
+    width: $content-max-width;
+  }
 
+  main {
     .main-content {
+      width: calc(100% - ((100% - #{$content-max-width}) / 2 + #{$navigation-width} + #{$grid-gutter-width/2}) );
+
       padding-left: calc( #{$grid-gutter-width} * 2 );
-      padding-right: calc( #{$grid-gutter-width} * 2 );
+      padding-right: calc((100% - #{$content-max-width}) / 2);
 
       .article-index {
         border-left: 1px solid gray("300");
