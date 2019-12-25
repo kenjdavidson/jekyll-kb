@@ -1,0 +1,5 @@
+<li class="item {% if p.path == page.path %}active{% endif %}">
+    <a href="{{ p.url | relative_url }}" alt="{{ p.title }}">
+        <span>{{ p.title }}</span>                    
+    </a>
+</li> 

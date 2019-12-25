@@ -43,7 +43,7 @@ timezone: America/Toronto
 
 collections:
   docs:
-    permalink: /docs/:path/
+    permalink: /:path/
     output: true
   posts:
     permalink: /blog/:year/:month/:day/:title/

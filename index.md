@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Jekyll KB Theme
+title: What is Jekyll KB
 ---
 
 A Jekyll theme which is a combined borrow from [Gitbook](https://www.gitbook.com) and [Jekyll Doc Theme](https://github.com/aksakalli/jekyll-doc-theme) providing more of the things I like from them both to use with my own projects - and obviously your own projects if you see fit.  I'm pretty much only using this for my Github projects and therefore will only really be testing this with the [Github Pages](https://pages.github.com/) implementation of [Jekyll](https://jekyllrb.com/).

@@ -17,16 +17,11 @@ body {
 
 .container-fluid {
   width: 100%;
-  max-width: $content-max-width;
 }
 
-h1 {
-  padding-bottom: $grid-gutter-width/2;
-  margin-bottom: $grid-gutter-width;
-}
-
-h2 {
-  padding-bottom: $grid-gutter-width/2;
+.img-fluid {
+  max-width: 500px;
+  width: 100%;
 }
 
 nav.navbar {
@@ -84,8 +79,9 @@ main {
   margin-top: 72px;
 
   .main-content {
+    width: 100%;
     flex: 1;
-    padding: $grid-gutter-width/2 0px;
+    padding: $grid-gutter-width/2;
   }
 }
 
@@ -117,12 +113,9 @@ footer {
     margin-top: 0px;
 
     .main-content {
-      padding-right: calc( 100% - #{$content-max-width} - #{$grid-gutter-width} * 2 );      
-
-      .articles {
-        padding-left: calc( #{$grid-gutter-width} * 1.5 );
-        padding-right: calc( #{$grid-gutter-width} * 1.5 );
-      }
+      width: calc(100% - (300px + #{$grid-gutter-width}));
+      padding-left: calc( #{$grid-gutter-width} * 1.5 );
+      padding-right: calc( #{$grid-gutter-width} * 1.5 );
 
       .article-index {
         display: none;
@@ -135,11 +128,8 @@ footer {
   main {
 
     .main-content {
-
-      .articles {
-        padding-left: calc( #{$grid-gutter-width} * 2 );
-        padding-right: calc( #{$grid-gutter-width} * 2 );
-      }
+      padding-left: calc( #{$grid-gutter-width} * 2 );
+      padding-right: calc( #{$grid-gutter-width} * 2 );
 
       .article-index {
         border-left: 1px solid gray("300");
@@ -149,3 +139,4 @@ footer {
 }
 
 @import "navigation";
+@import "breadcrumbs";

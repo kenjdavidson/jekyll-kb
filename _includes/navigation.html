@@ -9,30 +9,29 @@
         <div class="menu-wrapper">
             <ul>
                 <li class="item {% if '/' == page.url %}active{% endif %}">
-                    <a href="{{ '/' | relative_url }}">What is {{ site.title }}</a>
+                    {% assign index = site.pages | where: "path","index.md" | first %}
+                    <a href="{{ index.url | relative_url }}">{{ index.title }}</a>
                 </li>
             </ul>
-            {% for section in site.data.menu %}
+            {% for menu_group in site.data.menu %}
             <ul>                  
-                <li class="heading">{{ section.title }}</li>                 
-                {% for item in section.links %}
-                {% if item.doc %}
-                {% assign p = site.docs | where:"path", item.doc | first %}
-                <li class="item {% if p.path == page.path %}active{% endif %}">
-                    <a href="{{ p.url | relative_url }}" alt="{{ p.title }}">
-                        <span>{{ p.title }}</span>                    
-                    </a>
-                </li> 
-                {% elsif item.links %}                
+                <li class="heading">{{ menu_group.title }}</li>                 
+                {% for menu_item in menu_group.links %}
+                {% if menu_item.doc %}
+                {% capture menu_item_path %}_docs/{{ menu_item.doc }}{% endcapture %}
+                {% assign p = site.docs | where:"path", menu_item_path | first %}
+                    {% include navigation-menu-item.html %}
+                {% elsif menu_item.links %}                
                 <li class="item menu">
-                    {% assign toggleId = item.title | downcase | replace: ' ', '-' %}
-                    <a alt="{{ item.title }}" data-toggle="collapse" href="#{{ toggleId }}" aria-expanded="false" aria-controls="{{ toggleId }}">
-                        <span>{{ item.title }}</span>
+                    {% assign toggleId = menu_item.title | downcase | replace: ' ', '-' %}
+                    <a alt="{{ menu_item.title }}" data-toggle="collapse" href="#{{ toggleId }}" aria-expanded="false" aria-controls="{{ toggleId }}">
+                        <span>{{ menu_item.title }}</span>
                         <i class="fas fa-chevron-right"></i>
                     </a>
-                    <ul id="{{ toggleId }}" class="collapse">
-                        {% for link in item.links %}
-                        {% assign p1 = site.docs | where:"path", link.doc | first %}
+                    <ul id="{{ toggleId }}" class="collapse {% if menu_item.title == page.chapter.title %}show{% endif %}">
+                        {% for sub_menu_link in menu_item.links %}
+                        {% capture sub_menu_link_path %}_docs/{{ sub_menu_link.doc }}{% endcapture %}
+                        {% assign p1 = site.docs | where:"path", sub_menu_link_path | first %}
                         <li class="item {% if p1.path == page.path %}active{% endif %}">
                             <a href="{{ p1.url | relative_url }}" alt="{{ p1.title }}">
                                 <span>{{ p1.title }}</span>                    
@@ -41,13 +40,8 @@
                         {% endfor %}                
                     </ul>
                 </li> 
-                {% elsif item.href %}
-                <li class="item external">
-                    <a href="{{ item.href }}" alt="{{ item.title }}" target="_blank">
-                        <span>{{ item.title }}</span>
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>            
-                </li>             
+                {% elsif menu_item.href %}
+                    {% include navigation-menu-item-external.html %}
                 {% endif %}
                 {% endfor %}                        
             </ul>

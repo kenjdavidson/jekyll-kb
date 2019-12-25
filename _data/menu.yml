@@ -1,28 +1,31 @@
 - title: Getting Started
   links:
-  - doc: _docs/installation.md
-  - doc: _docs/configuration.md
-  - doc: _docs/jekyll.md
+  - doc: getting-started/installation.md
+  - doc: getting-started/cheetsheet.md
+- title: configuration
+  links:
+  - doc: configuration/theming.md
+  - doc: configuration/navigation.md  
+  - doc: configuration/social-yml.md  
 - title: Filler Links
   links:
-  - doc: _docs/installation.md
-  - doc: _docs/configuration.md
-  - doc: _docs/jekyll.md
-  - doc: _docs/installation.md
-  - doc: _docs/configuration.md
-  - doc: _docs/jekyll.md   
+  - doc: configuration/theming.md
+  - doc: configuration/navigation.md  
+  - doc: configuration/social-yml.md 
+  - doc: configuration/theming.md
+  - doc: configuration/navigation.md  
+  - doc: configuration/social-yml.md    
 - title: Hierarchy Menus
   links:
-  - title: Group Example
+  - title: Getting Started
     links:
-    - doc: _docs/installation.md  
-    - doc: _docs/configuration.md
-    - doc: _docs/jekyll.md 
-  - title: Group Example 2
+    - doc: getting-started/installation.md
+    - doc: getting-started/cheetsheet.md
+  - title: Configuration
     links:
-    - doc: _docs/installation.md  
-    - doc: _docs/configuration.md
-    - doc: _docs/jekyll.md     
+    - doc: configuration/theming.md
+    - doc: configuration/navigation.md  
+    - doc: configuration/social-yml.md  
 - title: External Links
   links:
   - title: Bootstrap

@@ -4,6 +4,9 @@ author:
   email: ken.j.davidson@live.ca
   address: 
 
+previous_text: Previous 
+next_text: Next
+
 # Date format
 date_format: "%-d %b %Y"  
 

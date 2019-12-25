@@ -1,0 +1,56 @@
+{% comment %} 
+  Previous and Next links based on the current position of the site.  Solution found from
+  https://talk.jekyllrb.com/t/previous-and-next-links-with-a-collections/3171
+{% endcomment %}
+{% assign items_raw = site.docs | where: 'type', page.type %}
+{% assign items = items_raw | sort: 'chapter.index' | reverse %}
+
+{% if items.size > 1 %}
+  {% comment %}
+    Store the index position of the matching items
+  {% endcomment %}
+  {% for item in items %}
+    {% if item.title == page.title %}
+      {% assign item_index = forloop.index %}
+    {% endif %}
+  {% endfor %}
+  
+  {% assign prev_index = item_index | plus: 1 %}
+  {% assign next_index = item_index | minus: 1 %}
+
+  {% assign first_item = items | first %}
+  {% assign last_item = items | last %}
+  
+  {% assign prev = site.pages | where: "path", "index.md" | first %}
+  {% assign next = items | last %}
+
+  {% for item in items %}
+    {% if forloop.index == prev_index %}
+      {% assign prev = item %}
+    {% endif %}
+    {% if forloop.index == next_index %}
+      {% assign next = item %}
+    {% endif %}
+  {% endfor %}
+
+  <section class="prev-next-links">
+    {% if prev %}
+    <a href="{{ prev.url | relative_url}}" class="prev-doc" title="{{ prev.title }}">
+      <i class="fas fa-arrow-left"></i>
+      <div class="prev-doc-content"> 
+        <div class="section-title">{{ prev.chapter.title }} {{ site.data.theme.previous_text }}</div>
+        <div class="title">{{ prev.title }}</div>
+      </div>
+    </a>
+    {% endif %}
+    {% if next %}
+    <a href="{{ next.url | relative_url}}" class="next-doc" title="{{ next.title }}">
+        <div class="next-doc-content"> 
+          <div class="section-title">{{ site.data.theme.next_text }} {{ next.chapter.title }}</div>
+          <div class="title">{{ next.title }}</div>
+        </div>
+        <i class="fas fa-arrow-right"></i>
+    </a>  
+    {% endif %}
+  </section>
+{% endif %}
