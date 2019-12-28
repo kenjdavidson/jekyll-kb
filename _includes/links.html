@@ -6,7 +6,9 @@ Links for CSS and other items.
 <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html','' }}" />
 <link rel="alternate" type="application/atom+xml" title="{{ site.data.theme.name }}" href="/atom.xml" />
 
-<link rel="shortcut icon" href="{{ '/assets/img/' | relative_url }}{{ site.data.theme.favicon }}">
+{% assign shortcut_icon = '/assets/img/favicon.ico' %}
+{% if site.data.theme.shortcut-icon %}{% assign shortcut_icon = site.data.theme.shortcut-icon %}{% endif %}
+<link rel="shortcut icon" href="{{ shortcut_icon | relative_url }}{{ site.data.theme.favicon }}">
 
 <link rel="stylesheet" href="{{ '/assets/css/mmenu-light/mmenu-light.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">

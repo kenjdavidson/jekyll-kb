@@ -35,7 +35,7 @@
 
   <section class="prev-next-links">
     {% if prev %}
-    <a href="{{ prev.url | relative_url}}" class="prev-doc" title="{{ prev.title }}">
+    <a href="{{ prev.url | relative_url}}" class="prev-doc shadow-sm" title="{{ prev.title }}">
       <i class="fas fa-arrow-left"></i>
       <div class="prev-doc-content"> 
         <div class="section-title">{{ prev.chapter.title }} {{ site.data.theme.previous_text }}</div>
@@ -44,7 +44,7 @@
     </a>
     {% endif %}
     {% if next %}
-    <a href="{{ next.url | relative_url}}" class="next-doc" title="{{ next.title }}">
+    <a href="{{ next.url | relative_url}}" class="next-doc shadow-sm" title="{{ next.title }}">
         <div class="next-doc-content"> 
           <div class="section-title">{{ site.data.theme.next_text }} {{ next.chapter.title }}</div>
           <div class="title">{{ next.title }}</div>

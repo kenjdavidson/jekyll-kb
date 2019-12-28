@@ -18,7 +18,7 @@ bootswatch:
 
 The default theme (is pretty obviously) [yeti](https://bootswatch.com/yeti/).  The `navbar` item provides a method for configuring the navbar colors - each theme has three possible navbar configurations based on primary/dark/light configurations.
 
-![Yeti](https://bootswatch.com/yeti/thumbnail.png){:.img-fluid}
+![Yeti](https://bootswatch.com/yeti/thumbnail.png){:.img-fluid.mx-auto}
 
 ## Customization
 

@@ -6,7 +6,7 @@ title: Markdown
 layout: default
 ---
 
-From [adam-p/markdown-here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+A sample of all of the most common markdown features available for your editing enjoyment.  Provided by [adam-p/markdown-here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
 ##### Table of Contents  
 [Headers](#headers)  

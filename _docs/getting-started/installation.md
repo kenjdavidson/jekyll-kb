@@ -24,4 +24,9 @@ Browse to http://localhost:4000
 
 ## Clone / Fork
 
-Clone or Fork the (project)[https://github.com:kenjdavidson/base16-scss.git].  Start modifying the content for your own site and publish as you normally would.
+Clone or Fork the [project](https://github.com:kenjdavidson/base16-scss.git).  Start modifying the content for your own site and publish as you normally would.  
+
+## Project Structure
+
+Although a quick peek at the code would provide the structure - not every one checks it out - so here is a quick run through of the project structure:
+

@@ -13,18 +13,38 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
+# 
+# The majority of these settings are used from Jekyll SEO
+# https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 title: Jekyll KB
+author: Ken Davidson
 email: ken.j.davidson@live.ca
+tagline: Jekyll Knowledge Base Theme
 description: |
-  Jekyll theme provides a documentation or knowledge base for your projects.  Using Bootstrap and
-  attempts to be as responsive as possible.
-  
-baseurl: /jekyll-kb
+  Jekyll theme provides a documentation or knowledge base for your projects - using 
+  Bootstrap and Bootswatch for theming.
+url: https://kenjdavidson.github.com/jekyll-kb
+logo: /jekyll-kb/assets/img/sitelogo.png
+social:
+  name: Ken Davidson
+  links:
+    - https://www.linkedin.com/in/kenjdavidson 
+    - https://github.com/kenjdavidson
+# google_site_verification:
+lang: en_CA
 github:
   username: kenjdavidson
   url: https://github.com/kenjdavidson/jekyll-kb
   edit_url: https://github.com/kenjdavidson/jekyll-kb/blog/master
+twitter:
+  username: kenjdavidson
+  card: summary
+
 search: false
+
+# Jekyll related configuration items.
+# https://jekyllrb.com/docs/configuration/
+baseurl: /jekyll-kb
 
 # Build settings
 markdown: kramdown

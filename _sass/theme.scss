@@ -1,5 +1,3 @@
-$content-max-width: 1200px !default;
-
 html,
 body {
   margin: 0px;
@@ -15,12 +13,47 @@ body {
   --mm-ocd-max-width: 300px;
 }
 
-.container-fluid {
-  width: 100%;
+h1, h2 {
+  margin-bottom: 0.75em;
 }
 
-.img-fluid {
-  max-width: 500px;
+h3, h4, h5 {
+  margin-bottom: 0.5em;
+}
+
+a, 
+a * {
+  transition: all 0.25s linear;
+  transition-property: border color;
+}
+
+a.site-link {
+  color: $body-color;
+  border: 1px solid $pagination-border-color;
+  border-radius: 2px;
+  padding: #{$grid-gutter-width/3} #{$grid-gutter-width/2};
+  margin-bottom: #{$grid-gutter-width/3};
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  i {
+    color: $pagination-color;
+  }
+
+  &:hover {
+    text-decoration: none;
+    border: 1px solid $pagination-active-border-color;
+    box-shadow: .125rem .25rem rgba($pagination-active-border-color, .075);
+
+    .title,
+    i {
+      color: $pagination-active-border-color;
+    }
+  }
+}
+
+.container-fluid {
   width: 100%;
 }
 
@@ -85,13 +118,6 @@ main {
   }
 }
 
-footer {
-  min-height: 200px;
-  border-top: 1px solid gray("300");
-  margin-top: $grid-gutter-width;
-  padding-top: $grid-gutter-width;
-}
-
 @include media-breakpoint-up(lg) {
   .container-fluid {
     width: 100%;
@@ -128,20 +154,27 @@ footer {
   }
 }
 
+@include media-breakpoint-up(md) {
+  .img-fluid {
+    display: block;
+    max-width: 75%;
+  }
+}
+
 @include media-breakpoint-up(xl) {
   .container-fluid {
-    width: $content-max-width;
+    width: map-get($grid-breakpoints, xl);
   }
 
   main {
     .main-content {
-      width: calc(100% - ((100% - #{$content-max-width}) / 2 + #{$navigation-width} + #{$grid-gutter-width/2}) );
+      width: calc(100% - ((100% - #{map-get($grid-breakpoints, xl)}) / 2 + #{$navigation-width} + #{$grid-gutter-width/2}) );
 
       padding-left: calc( #{$grid-gutter-width} * 2 );
-      padding-right: calc((100% - #{$content-max-width}) / 2);
+      padding-right: calc((100% - #{map-get($grid-breakpoints, xl)}) / 2);
 
       .article-index {
-        border-left: 1px solid gray("300");
+        border-left: 1px solid $pagination-color;
       }
     }
   }
@@ -149,3 +182,4 @@ footer {
 
 @import "navigation";
 @import "breadcrumbs";
+@import "footer";

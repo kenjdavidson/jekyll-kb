@@ -1,0 +1,23 @@
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  border-top: 2px solid $pagination-border-color;
+  margin-top: $grid-gutter-width;
+  padding-top: $grid-gutter-width;
+
+  p {
+    margin-bottom: 0px;
+    font-size: 0.75em;
+  }
+}
+
+#improve {
+  display: block;
+  border-radius: 50%;
+
+  .title { display: none; }
+  :hover .title { display: inline-block; }
+
+}

@@ -1,3 +1,17 @@
+{% assign privacy = site.pages | where: "privacy", true | first %}
+{% assign terms = site.pages | where: "terms", true | first %}
+
 <footer>
-    
+  <div>
+    <p>Power by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> &amp; <a href="https://pages.github.com/" target="_blank">Github Pages</a>.</p>    
+    {% if privacy and site.data.theme.privacy %}<p><a href="{{ privacy.url | relative_url }}">{{ privacy.title }}</a></p>{% endif %}
+    {% if terms and site.data.theme.terms %}<p><a href="{{ terms.url | relative_url }}">{{ terms.title }}</a></p>{% endif %}
+  </div>
+  <div>
+    <a href="{{ site.github.edit_url | append: "/" | append: page.path }}" id="improve" class="site-link shadow-sm"
+      alt="Improve this page">
+      <i class="fas fa-pen-nib"></i>
+      <span class="title">Improve this page</span>
+    </a>
+  </div>
 </footer>
