@@ -3,7 +3,33 @@
   background-color: $gray-200;
 
   #main-navigation-wrapper {
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: overlay;
+
+    &::-webkit-scrollbar {
+      width: 7px;
+      height: 4px;
+      display: none;      
+    }
+  
+    &::-webkit-scrollbar-track {
+      background: none;
+      border-width: 0;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background: $scrollbar-thumb-color;
+      transition: background 250ms ease;
+      border-radius: 4px;
+      -moz-transition: background 250ms ease;
+      -webkit-transition: background 250ms ease;
+    }    
+
+    &:hover {
+      &::-webkit-scrollbar  {
+        display: initial;
+      }      
+    }
   }
 
   .menu-wrapper {
