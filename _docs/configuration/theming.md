@@ -24,4 +24,5 @@ The default theme (is pretty obviously) [yeti](https://bootswatch.com/yeti/).  T
 
 New themes or current themes can be modified by downloading and editing the `_variables.scss` files supplied with the theme.  An example of this (for yeti) can be found at [Yeti variables](https://bootswatch.com/4/yeti/_variables.scss) or within the project `_sass/bootswatch/yeti/_variables.scss`.
 
+## Shortcut &amp; Fav Icons
 

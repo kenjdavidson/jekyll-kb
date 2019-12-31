@@ -14,11 +14,17 @@ body {
 }
 
 h1, h2 {
+  margin-top: 0.75em;
   margin-bottom: 0.75em;
 }
 
 h3, h4, h5 {
+  margin-top: 0.5em;
   margin-bottom: 0.5em;
+}
+
+pre {
+  padding: 10px;
 }
 
 a, 
@@ -53,6 +59,25 @@ a.site-link {
   }
 }
 
+blockquote {
+  margin: 0 0 1rem;
+  border-left: 4px solid $gray-400;
+  background-color: $gray-200;
+  padding: 2em 2em;
+  border-radius: 5px;
+
+  p {
+    margin: 0px;
+  }
+}
+
+@each $name,$color in $theme-colors {
+  blockquote.#{$name} {
+    border-left-color: $color;
+    background-color: #{$color}33;
+  }
+}
+
 .container-fluid {
   width: 100%;
 }
@@ -79,19 +104,17 @@ nav.navbar {
   .navbar-brand {
     display: flex;
     align-items: center;
+    font-weight: $navbar-title-weight;
 
     img {
-      height: 36px;
+      height: 30px;
       border-radius: 50px;   
       margin-right: 16px;   
     }
-
-    span {      
-      font-weight: $navbar-title-weight;
-    }
   }
 
-  .nav-link i {
+  .nav-link {
+    padding: 0.5em;
     font-size: $navbar-title-size;    
   }
 
@@ -101,7 +124,9 @@ nav.navbar {
     align-items: center;
 
     &.left {
-      position: relative;
+      flex: 1;
+      overflow: hidden;
+      position: relative;      
     }
   }
 }
@@ -125,18 +150,19 @@ main {
 
   nav.navbar {
     position: initial;
-  }
 
-  .navbar-section.left {
-    min-width: $navigation-width;          
-
-    &:after {
-      content: "";
-      position: absolute;
-      top: 20%; bottom: 20%; right: 0px;
-      width: 1px;
-      background-color: $navbar-dark-color;
-    }
+    .navbar-section.left {
+      flex: initial;
+      min-width: $navigation-width;          
+  
+      &:after {
+        content: "";
+        position: absolute;
+        top: 20%; bottom: 20%; right: 0px;
+        width: 1px;
+        background-color: $navbar-dark-color;
+      }
+    }    
   }
 
   main {

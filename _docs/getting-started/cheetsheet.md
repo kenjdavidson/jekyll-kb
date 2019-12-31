@@ -6,7 +6,7 @@ title: Markdown
 layout: default
 ---
 
-A sample of all of the most common markdown features available for your editing enjoyment.  Provided by [adam-p/markdown-here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
+A sample of all of the most common markdown features available for your editing enjoyment, provided by [adam-p/markdown-here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).  Updated code sections to use Jekyll Rouge highligther instead of backticks.
 
 ##### Table of Contents  
 [Headers](#headers)  
@@ -25,7 +25,7 @@ A sample of all of the most common markdown features available for your editing 
 <a name="headers"/>
 ## Headers
 
-```no-highlight
+{% highlight markdown %}
 # H1
 ## H2
 ### H3
@@ -40,7 +40,7 @@ Alt-H1
 
 Alt-H2
 ------
-```
+{% endhighlight %}
 
 # H1
 ## H2
@@ -60,7 +60,7 @@ Alt-H2
 <a name="emphasis"/>
 ## Emphasis
 
-```no-highlight
+{% highlight markdown %}
 Emphasis, aka italics, with *asterisks* or _underscores_.
 
 Strong emphasis, aka bold, with **asterisks** or __underscores__.
@@ -68,7 +68,7 @@ Strong emphasis, aka bold, with **asterisks** or __underscores__.
 Combined emphasis with **asterisks and _underscores_**.
 
 Strikethrough uses two tildes. ~~Scratch this.~~
-```
+{% endhighlight %}
 
 Emphasis, aka italics, with *asterisks* or _underscores_.
 
@@ -84,7 +84,7 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 
 (In this example, leading and trailing spaces are shown with with dots: ⋅)
 
-```no-highlight
+{% highlight markdown %}
 1. First ordered list item
 2. Another item
 ⋅⋅* Unordered sub-list.
@@ -101,7 +101,7 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 * Unordered list can use asterisks
 - Or minuses
 + Or pluses
-```
+{% endhighlight %}
 
 1. First ordered list item
 2. Another item
@@ -125,7 +125,7 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 
 There are two ways to create links.
 
-```no-highlight
+{% highlight markdown %}
 [I'm an inline-style link](https://www.google.com)
 
 [I'm an inline-style link with title](https://www.google.com "Google's Homepage")
@@ -147,7 +147,7 @@ Some text to show that the reference links can follow later.
 [arbitrary case-insensitive reference text]: https://www.mozilla.org
 [1]: http://slashdot.org
 [link text itself]: http://www.reddit.com
-```
+{% endhighlight %}
 
 [I'm an inline-style link](https://www.google.com)
 
@@ -174,7 +174,7 @@ Some text to show that the reference links can follow later.
 <a name="images"/>
 ## Images
 
-```no-highlight
+{% highlight markdown %}
 Here's our logo (hover to see the title text):
 
 Inline-style:
@@ -184,7 +184,7 @@ Reference-style:
 ![alt text][logo]
 
 [logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
-```
+{% endhighlight %}
 
 Here's our logo (hover to see the title text):
 
@@ -199,48 +199,15 @@ Reference-style:
 <a name="code"/>
 ## Code and Syntax Highlighting
 
-Code blocks are part of the Markdown spec, but syntax highlighting isn't. However, many renderers -- like Github's and *Markdown Here* -- support syntax highlighting. Which languages are supported and how those language names should be written will vary from renderer to renderer. *Markdown Here* supports highlighting for dozens of languages (and not-really-languages, like diffs and HTTP headers); to see the complete list, and how to write the language names, see the [highlight.js demo page](http://softwaremaniacs.org/media/soft/highlight/test.html).
+Code and syntax highlighting is done through Jekyll using the [Rouge highlighter](http://rouge.jneen.net/) which provides it's own set of configuration settings.  The styles for the highlighter are based on my own project [Base16scss](https://kenjdavidson.github.io/base16-scss/).  Code blocks are wrapped with
 
-```no-highlight
-Inline `code` has `back-ticks around` it.
-```
+{% raw %}
+{% highlight language [linenos] %}
+// Code is entered here
+{% endhighlight %}
+{% endraw %}
 
-Inline `code` has `back-ticks around` it.
-
-Blocks of code are either fenced by lines with three back-ticks <code>```</code>, or are indented with four spaces. I recommend only using the fenced code blocks -- they're easier and only they support syntax highlighting.
-
-<pre lang="no-highlight"><code>```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
-```
-
-```python
-s = "Python syntax highlighting"
-print s
-```
-
-```
-No language indicated, so no syntax highlighting.
-But let's throw in a &lt;b&gt;tag&lt;/b&gt;.
-```
-</code></pre>
-
-
-
-```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
-```
-
-```python
-s = "Python syntax highlighting"
-print s
-```
-
-```
-No language indicated, so no syntax highlighting in Markdown Here (varies on Github).
-But let's throw in a <b>tag</b>.
-```
+All the available languages can be viewed at on the Rouge docs.
 
 
 <a name="tables"/>
@@ -248,7 +215,7 @@ But let's throw in a <b>tag</b>.
 
 Tables aren't part of the core Markdown spec, but they are part of GFM and *Markdown Here* supports them. They are an easy way of adding tables to your email -- a task that would otherwise require copy-pasting from another application.
 
-```no-highlight
+{% highlight markdown %}
 Colons can be used to align columns.
 
 | Tables        | Are           | Cool  |
@@ -265,7 +232,7 @@ Markdown | Less | Pretty
 --- | --- | ---
 *Still* | `renders` | **nicely**
 1 | 2 | 3
-```
+{% endhighlight %}
 
 Colons can be used to align columns.
 
@@ -285,14 +252,14 @@ Markdown | Less | Pretty
 <a name="blockquotes"/>
 ## Blockquotes
 
-```no-highlight
+{% highlight markdown %}
 > Blockquotes are very handy in email to emulate reply text.
 > This line is part of the same quote.
 
 Quote break.
 
 > This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote.
-```
+{% endhighlight %}
 
 > Blockquotes are very handy in email to emulate reply text.
 > This line is part of the same quote.
@@ -300,13 +267,34 @@ Quote break.
 Quote break.
 
 > This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote.
+
+Block quotes can be styled using the `class="THEME_COLOR"` addition, which will apply the border and background matching the selected *THEME_COLOR*.  To use the primary theme color we can use:
+
+{% highlight markdown %}
+{% raw %}
+{:.primary}
+> This is a primary blockquote.
+{% endraw %}
+{% endhighlight %}
+
+{:.primary}
+> This is a primary blockquote and should show the border and background using the appropriate color.   All theme-colors are available based on the bootstrap variables.
+
+{:.success}
+> This is a success blockquote and should show the border and background using the appropriate color.   All theme-colors are available based on the bootstrap variables.
+
+{:.danger}
+> This is a danger blockquote and should show the border and background using the appropriate color.   All theme-colors are available based on the bootstrap variables.
+
+{:.info}
+> This is a info blockquote and should show the border and background using the appropriate color.   All theme-colors are available based on the bootstrap variables.
 
 <a name="html"/>
 ## Inline HTML
 
 You can also use raw HTML in your Markdown, and it'll mostly work pretty well.
 
-```no-highlight
+{% highlight markdown %}
 <dl>
   <dt>Definition list</dt>
   <dd>Is something people use sometimes.</dd>
@@ -314,7 +302,7 @@ You can also use raw HTML in your Markdown, and it'll mostly work pretty well.
   <dt>Markdown in HTML</dt>
   <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
 </dl>
-```
+{% endhighlight %}
 
 <dl>
   <dt>Definition list</dt>
@@ -327,7 +315,7 @@ You can also use raw HTML in your Markdown, and it'll mostly work pretty well.
 <a name="hr"/>
 ## Horizontal Rule
 
-```
+{% highlight markdown %}
 Three or more...
 
 ---
@@ -341,7 +329,7 @@ Asterisks
 ___
 
 Underscores
-```
+{% endhighlight %}
 
 Three or more...
 
@@ -364,14 +352,14 @@ My basic recommendation for learning how line breaks work is to experiment and d
 
 Here are some things to try out:
 
-```
+{% highlight markdown %}
 Here's a line for us to start with.
 
 This line is separated from the one above by two newlines, so it will be a *separate paragraph*.
 
 This line is also a separate paragraph, but...
 This line is only separated by a single newline, so it's a separate line in the *same paragraph*.
-```
+{% endhighlight %}
 
 Here's a line for us to start with.
 
@@ -387,17 +375,17 @@ This line is only separated by a single newline, so it's a separate line in the 
 
 They can't be added directly but you can add an image with a link to the video like this:
 
-```no-highlight
+{% highlight markdown %}
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=YOUTUBE_VIDEO_ID_HERE
 " target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg"
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
-```
+{% endhighlight %}
 
 Or, in pure Markdown, but losing the image sizing and border:
 
-```no-highlight
+{% highlight markdown %}
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
-```
+{% endhighlight %}
 
 Referencing a bug by #bugID in your git commit links it to the slip. For example #1.
 
