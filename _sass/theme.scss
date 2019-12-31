@@ -83,7 +83,7 @@ blockquote {
 }
 
 nav.navbar {
-  height: 72px;
+  height: 60px;
   z-index: 1000;
   position: fixed;
   width: 100%;
@@ -143,6 +143,13 @@ main {
   }
 }
 
+@include media-breakpoint-up(md) {
+  .img-fluid {
+    display: block;
+    max-width: 75%;
+  }
+}
+
 @include media-breakpoint-up(lg) {
   .container-fluid {
     width: 100%;
@@ -150,6 +157,7 @@ main {
 
   nav.navbar {
     position: initial;
+    height: 72px;
 
     .navbar-section.left {
       flex: initial;
@@ -177,13 +185,6 @@ main {
         display: none;
       }
     }
-  }
-}
-
-@include media-breakpoint-up(md) {
-  .img-fluid {
-    display: block;
-    max-width: 75%;
   }
 }
 
