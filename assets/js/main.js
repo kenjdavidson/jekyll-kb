@@ -13,20 +13,26 @@ $(function() {
     // is always available.
     const navbar = $('nav#primary-navbar');
     const navigation = $('#main-navigation-wrapper');
-    if (window.innerWidth > MAX_WIDTH) {  
-        const controller = new ScrollMagic.Controller();
-        const menuHeightScene = new ScrollMagic.Scene({ duration: navbar.outerHeight() })
-            .addTo(controller)
-            .on("progress", function (event) {
-                navigation.css({
-                    'max-height': window.innerHeight - ((1 - event.progress) * navbar.outerHeight()),
-                    'position': 1 === event.progress ? 'sticky' : 'initial',
-                    'top': 1 === event.progress ? 0 : undefined
-                });                        
+    initScrollScenes();
+
+    $( window ).on('resize', initScrollScenes);
+
+    function initScrollScenes() {
+        if (window.innerWidth > MAX_WIDTH) {  
+            const controller = new ScrollMagic.Controller();
+            const menuHeightScene = new ScrollMagic.Scene({ duration: navbar.outerHeight() })
+                .addTo(controller)
+                .on("progress", function (event) {
+                    navigation.css({
+                        'max-height': window.innerHeight - ((1 - event.progress) * navbar.outerHeight()),
+                        'position': 1 === event.progress ? 'sticky' : 'initial',
+                        'top': 1 === event.progress ? 0 : undefined
+                    });                        
+                });
+        } else {
+            navigation.css({
+                'max-height': window.innerHeight
             });
-    } else {
-        navigation.css({
-            'max-height': window.innerHeight
-        });
+        }
     }
 });
