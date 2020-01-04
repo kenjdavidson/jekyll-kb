@@ -35,7 +35,7 @@ lang: en_CA
 github:
   username: kenjdavidson
   url: https://github.com/kenjdavidson/jekyll-kb
-  edit_url: https://github.com/kenjdavidson/jekyll-kb/blog/master
+  edit_url: https://github.com/kenjdavidson/jekyll-kb/blob/master
 twitter:
   username: kenjdavidson
   card: summary
