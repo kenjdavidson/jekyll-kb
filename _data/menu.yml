@@ -5,21 +5,13 @@
 - title: configuration
   links:
   - doc: configuration/theming.md
-  - doc: configuration/navigation.md  
-- title: Filler Links
-  links:
-  - doc: configuration/theming.md
-  - doc: configuration/navigation.md  
-  - doc: configuration/theming.md
-  - doc: configuration/navigation.md    
+  - doc: configuration/navigation.md   
 - title: Hierarchy Menus
   links:
   - title: Getting Started
     links:
     - doc: getting-started/installation.md
     - doc: getting-started/cheetsheet.md
-  - title: Configuration
-    links:
     - doc: configuration/theming.md
     - doc: configuration/navigation.md  
 - title: External Links
