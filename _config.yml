@@ -30,12 +30,12 @@ social:
   links:
     - https://www.linkedin.com/in/kenjdavidson 
     - https://github.com/kenjdavidson
-# google_site_verification:
+
 lang: en_CA
-github:
-  username: kenjdavidson
-  url: https://github.com/kenjdavidson/jekyll-kb
-  edit_url: https://github.com/kenjdavidson/jekyll-kb/blob/master
+github_username: kenjdavidson
+github_url: https://github.com/kenjdavidson/jekyll-kb
+github_edit_url: https://github.com/kenjdavidson/jekyll-kb/blob/master
+
 twitter:
   username: kenjdavidson
   card: summary

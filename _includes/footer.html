@@ -8,7 +8,7 @@
     {% if terms and site.data.theme.terms %}<p><a href="{{ terms.url | relative_url }}">{{ terms.title }}</a></p>{% endif %}
   </div>
   <div>
-    <a href="{{ site.github.edit_url | append: "/" | append: page.path }}" id="improve" class="site-link shadow-sm"
+    <a href="{{ site.github_edit_url | append: "/" | append: page.path }}" id="improve" class="site-link shadow-sm"
       alt="Improve this page">
       <i class="fas fa-pen-nib"></i>
       <span class="title">Improve this page</span>
