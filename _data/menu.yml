@@ -1,6 +1,7 @@
 - title: Getting Started
   links:
   - doc: getting-started/installation.md
+  - doc: getting-started/authoring.md
   - doc: getting-started/cheetsheet.md
 - title: configuration
   links:
