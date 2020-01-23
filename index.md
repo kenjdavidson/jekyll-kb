@@ -53,3 +53,23 @@ I've recently been playing with [Scrollmagic](https://scrollmagic.io/) in a numb
 ### Mmenu
 
 To provide this with basic drawer functionality, but allow extending documents to build a more pimped out navigation, I've included the [Mmenu-light](https://mmenujs.com/mmenu-light/) library in the theme. 
+
+### Base16Scss
+
+Which is configured to work with both :
+
+{% highlight markdown %}
+{% raw %}
+{% highlight java %}
+public class Person {}
+{% endhighlight%}
+{% endraw %}
+{% endhighlight %}
+
+and 
+
+{% raw %}
+```java
+public class Person {}
+```
+{% endraw %}

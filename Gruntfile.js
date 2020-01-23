@@ -23,7 +23,10 @@ module.exports = function(grunt) {
             { expand: true, cwd: 'node_modules/mmenu-light/dist', src: '**/*.js', dest: 'assets/js/mmenu-light' },
             { expand: true, cwd: 'node_modules/mmenu-light/dist', src: '**/*.css', dest: 'assets/css/mmenu-light' },
             { expand: true, cwd: 'node_modules/mburger-css/dist', src: '**/*.js', dest: 'assets/js/mmenu-light' },
-            { expand: true, cwd: 'node_modules/mburger-css/dist', src: '**/*.css', dest: 'assets/css/mmenu-light' }            
+            { expand: true, cwd: 'node_modules/mburger-css/dist', src: '**/*.css', dest: 'assets/css/mmenu-light' },          
+
+            // Base16Scss
+            { expand: true, cwd: 'node_modules/@kenjdavidson/base16-scss/dist/sass', src: '**/*', dest: '_sass/base16scss' }            
           ]
         }
       }
